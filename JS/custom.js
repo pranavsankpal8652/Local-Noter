@@ -40,7 +40,7 @@ function addnote(note){
   })
 
   // console.log(note);
-   console.log(notes_area);
+  //  console.log(notes_area);
    notHtml +=
     `<div class="note">
                  <div class="header_bar">
@@ -84,12 +84,14 @@ function savenote(note,index){
  })
  
 
- var newnote=JSON.parse(localStorage.getItem('notes')) ?? []
- console.log(newnote)
- if(newnote.length===0){
+ var newnote=JSON.parse(localStorage.getItem('notes')) 
+//  console.log(newnote)
+ if(newnote===null){
+  console.log('if'+newnote)
   addnewnote('')
  }
  else{
+  console.log('else'+newnote)
   newnote.map((note)=>{
     addnote(note)
    })
